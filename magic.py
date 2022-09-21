@@ -1,6 +1,7 @@
 import random
 
-# variable: user_input(string), user_answer(list), answer_dict(dictionary number(1-15):answer_list)   
+# variable: user_input(string), user_answer(list), answer_dict(dictionary number(1-15):answer_list), listA(list), listB(list), listC(list), listD(list)
+# let the user think of any number user like from 1-15, ask them to write down somewhere 
 # disply list of numbers A, and ask if the number is in this list
 # save the answer in the list (yes=1 no=0)
 # display list of numbers B, and ask if the number is in this list
@@ -17,6 +18,8 @@ import random
 #           start from the beginning
 #       -if no:
 #           exit the while loop
+
+
 
 
 # possible errors
