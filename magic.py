@@ -11,8 +11,8 @@ import random
 # append the answer to the answer list (yes=1 no=0)
 # check the dictionary for the guessing number (key= user_number value= answer_list) 
 # display the answer and ask the user if the answer is correct 
-# - if yes: exit the while loop 
-# - no: let me try it again (yes or no )
+# - if yes: exit the while loop with msg 
+# - no: msg-let me try it again (yes or no )
 #       -if yes:
 #           start from the beginning
 #       -if no:
