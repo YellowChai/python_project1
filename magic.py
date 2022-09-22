@@ -13,12 +13,15 @@ answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100
 def read_mind():
     answer_list=[]
     print(" I can read your mind. Please think of any number between 1-15, and write it down somewhere near. ")
-    start_game = input(" Do you want to continue? Please, type number 1. Yes 2. No ")
-    if start_game == "1" :
+
+# ask if user wants to start     
+    start = input(" Do you want to continue? Please, type number 1. Yes 2. No ")
+    if start == "1" :
         run = True
-    elif start_game == "2" :
+    elif start == "2" :
         print(" Plase, visit again! ")
         run = False
+        
 # let the user think of any number user like from 1-15, ask them to write down somewhere 
 # disply list of numbers A, and ask if the number is in this list    
 # save the answer in the list (yes=1 no=0)
