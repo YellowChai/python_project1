@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import time
 
 # lists displayed to user 
@@ -24,8 +26,8 @@ def read_mind():
 
         answer_list=[]
         
-        # disply list of numbers A, and ask if the number is in this list    
-        # save the answer in the list (yes=1 no=0)
+        """ disply list of numbers A, and ask if the number is in this list    
+         save the answer in the list (yes=1 no=0) """
         
         answer = get_answer(list_a)
         answer_list.append(answer)
