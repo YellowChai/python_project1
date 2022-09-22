@@ -15,16 +15,18 @@ answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100
 # function 
 def read_mind():
     answer_list=[]
+
+    # let the user think of any number user like from 1-15, ask them to write down somewhere     
     run = start()
 
-    # let the user think of any number user like from 1-15, ask them to write down somewhere 
 
     while run:
-        answer_list=[]
-        # answer_str = ""
 
-    # disply list of numbers A, and ask if the number is in this list    
-    # save the answer in the list (yes=1 no=0)
+        answer_list=[]
+        
+        # disply list of numbers A, and ask if the number is in this list    
+        # save the answer in the list (yes=1 no=0)
+        
         answer = get_answer(list_a)
         answer_list.append(answer)
         time.sleep(1)
@@ -39,11 +41,9 @@ def read_mind():
 
         answer = get_answer(list_d)
         answer_list.append(answer)
-        time.sleep(1)
-    
+        time.sleep(1)    
 
-# find the number from the answer dictionary 
-
+        # find the number from the answer dictionary 
         guess = list(answer_dict.keys())[list (answer_dict.values()).index(''.join(answer_list))]
         time.sleep(1)
         print(" hmmm.. I see what you have in your mind")
@@ -55,7 +55,7 @@ def read_mind():
         print ( f" {guess} in your mind. ")
         time.sleep(1)
 
-# display the result and ask user to confirm the result, and ask if the user wants to play again
+        # display the result and ask user to confirm the result, and ask if the user wants to play again
         run = get_result(guess)
         
     return 
