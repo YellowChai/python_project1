@@ -13,7 +13,12 @@ answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100
 def read_mind():
     answer_list=[]
     print(" I can read your mind. Please think of any number between 1-15, and write it down somewhere near. ")
-    run = True
+    start_game = input(" Do you want to continue? Please, type number 1. Yes 2. No ")
+    if start_game == "1" :
+        run = True
+    elif start_game == "2" :
+        print(" Plase, visit again! ")
+        run = False
 # let the user think of any number user like from 1-15, ask them to write down somewhere 
 # disply list of numbers A, and ask if the number is in this list    
 # save the answer in the list (yes=1 no=0)
@@ -27,31 +32,28 @@ def read_mind():
 # append the answer to the answer list (yes=1 no=0)
         answer = get_answer(list_b)
         answer_list.append(answer)
-        print(answer_list)
     
 # display list of number C, and ask if the number is in this list
 # append the answer to the answer list (yes=1 no=0)
         answer = get_answer(list_c)
         answer_list.append(answer)
-        print(answer_list)
 
 # display list of number D, and ask if the number is in this list 
 # append the answer to the answer list (yes=1 no=0)
         answer = get_answer(list_d)
         answer_list.append(answer)
-        print(answer_list)
 
 # check the dictionary for the guessing number (key= user_number value= answer_list) 
 # display the answer from the dict and ask the user if the answer is correct. if aswer is correct, exit the while loop
 # if user say the answer is incorrect, ask user if he wants to play again. if yes, run the game again, if no, exit the loop
         print ( f"You have {list(answer_dict.keys())[list (answer_dict.values()).index(''.join(answer_list))]} in your mind. ")
-        confirm = input("Is this correct? please, type number 1. Yes 2. No : ")
+        confirm = input(" Is this correct? please, type number 1. Yes 2. No : ")
         if confirm == "1":
-            print("Thank you. I see lots of great things coming to your life. Good luck! ")
+            print(" Thank you. I see lots of great things coming to your life. Good luck! ")
             # run = False
             break        
         elif confirm == "2":
-            replay = input("Hmm.. Are you sure? Please, double check your number! Do you want to try again? please, type number 1. Yes 2. No: ")
+            replay = input(" Hmm.. Are you sure? Please, double check your number! Do you want to try again? please, type number 1. Yes 2. No: ")
             if replay == "1":
                 run = True
             elif replay == "2":
@@ -62,14 +64,14 @@ def read_mind():
 
 def get_answer(list):
     # user_answer=[]
-    answer = input(f"Is your number in this list? {list} please, type number 1.Yes 2.No : ")
+    answer = input(f" Is your number in this list? {list} please, type number 1. Yes 2. No : ")
     if answer == "1" :
         answer = "1"
     elif answer == "2" :
         answer = "0"
     else :
         print("Please, type valid number.")
-        answer = input("Is your number in this list? please, type number 1.Yes 2.No : ")
+        answer = input(" Is your number in this list? please, type number 1. Yes 2. No : ")
     print(answer)
     return answer
 
