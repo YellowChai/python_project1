@@ -13,43 +13,36 @@ answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100
 
 
 # function 
-
 def read_mind():
     answer_list=[]
     run = start()
 
-# let the user think of any number user like from 1-15, ask them to write down somewhere 
-# disply list of numbers A, and ask if the number is in this list    
-# save the answer in the list (yes=1 no=0)
+    # let the user think of any number user like from 1-15, ask them to write down somewhere 
+
     while run:
         answer_list=[]
         # answer_str = ""
 
+    # disply list of numbers A, and ask if the number is in this list    
+    # save the answer in the list (yes=1 no=0)
         answer = get_answer(list_a)
         answer_list.append(answer)
         time.sleep(1)
     
-# display list of numbers B, and ask if the number is in this list
-# append the answer to the answer list (yes=1 no=0)
         answer = get_answer(list_b)
         answer_list.append(answer)
         time.sleep(1)
-    
-# display list of number C, and ask if the number is in this list
-# append the answer to the answer list (yes=1 no=0)
+
         answer = get_answer(list_c)
         answer_list.append(answer)
         time.sleep(1)
 
-# display list of number D, and ask if the number is in this list 
-# append the answer to the answer list (yes=1 no=0)
         answer = get_answer(list_d)
         answer_list.append(answer)
         time.sleep(1)
     
 
-# check the dictionary for the guessing number (key= user_number value= answer_list) 
-# display the answer from the dict and ask the user if the answer is correct. if aswer is correct, exit the while loop
+# find the number from the answer dictionary 
 
         guess = list(answer_dict.keys())[list (answer_dict.values()).index(''.join(answer_list))]
         time.sleep(1)
@@ -62,17 +55,18 @@ def read_mind():
         print ( f" {guess} in your mind. ")
         time.sleep(1)
 
-# ask user to confirm the result, and ask if the user wants to play again
+# display the result and ask user to confirm the result, and ask if the user wants to play again
         run = get_result(guess)
         
     return 
 
 
+# start game 
 def start():
     print(" I can read your mind with 4 random questions. Please think of any number between 0-15, and write it down somewhere near. ")
     time.sleep(2)
     valid_input = False
-# ask if user wants to start  
+
     while (not valid_input) :
         start = input(" Do you want to continue?  Please, select 1. Yes 2. No : ")
         if start == "1" :
@@ -89,7 +83,7 @@ def start():
     return run
 
 
-# asking user if the number is in displayed lists, and return the answer
+# asking user if the number is in displayed lists, and return the user input 
 def get_answer(list):
 
     answer = input(f" Is your number in this list? {list} please, select 1. Yes 2. No : ")
@@ -109,7 +103,7 @@ def get_answer(list):
     return answer
 
 
-# if the guess is incorrect, ask user if he wants to play again. if yes, run the game again, if no, exit the loop
+# display result - if the guess is incorrect, ask user if he wants to play again. if yes, run the game again, if no, end the loop
 def get_result(guess):
     
     valid_confirm = False
