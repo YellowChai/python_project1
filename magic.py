@@ -22,7 +22,7 @@ def read_mind():
     elif start == "2" :
         print(" Plase, visit again! ")
         run = False
-
+    else: start = input("Please, type valid number. Do you want to conitue? 1. Yes 2. No ")
 # let the user think of any number user like from 1-15, ask them to write down somewhere 
 # disply list of numbers A, and ask if the number is in this list    
 # save the answer in the list (yes=1 no=0)
@@ -61,8 +61,10 @@ def read_mind():
             if replay == "1":
                 run = True
             elif replay == "2":
-                run = False               
-
+                run = False
+            else : replay = input(" Please, type valid number. Do you want to try again? 1. Yes 2. No: ")
+              
+        else: confirm = input(f" Please, type valid number. Is your number {list(answer_dict.keys())[list (answer_dict.values()).index(''.join(answer_list))]} ? 1. Yes 2. No : ")
     return 
 
 
@@ -76,7 +78,7 @@ def get_answer(list):
         answer = "0"
     else :
         print(" Please, type valid number.")
-        answer = input(" Is your number in this list? please, type number 1. Yes 2. No : ")
+        answer = input(f" Please, type valid number. Is your number in this list? {list} 1. Yes 2. No : ") 
     print(answer)
     return answer
 
