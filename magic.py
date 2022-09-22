@@ -1,22 +1,30 @@
 #!/usr/bin/env python3
+"""Alice Huh - Read your mind game - Project 1 """
 
 import time
-
-# lists displayed to user 
-list_a = [10,8,12,15,9,11,13,14]
-list_b = [4,14,7,6,12,13,5,15]
-list_c = [2,11,6,3,14,7,15,10]
-list_d = [11,1,13,5,7,3,9,15]
-
-
-# answer dictionary to find the user's number
-answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100', '5' : '0101', '6' : '0110', '7' : '0111', 
-            '8' : '1000', '9' : '1001', '10' : '1010', '11' : '1011', '12' : '1100', '13' : '1101', '14' : '1110', '15' : '1111'}
 
 
 # function 
 def main():
+
+    # lists displayed to user 
+    list_a = [10,8,12,15,9,11,13,14]
+    list_b = [4,14,7,6,12,13,5,15]
+    list_c = [2,11,6,3,14,7,15,10]
+    list_d = [11,1,13,5,7,3,9,15]
+
+    # answer dictionary to find the user's number
+    answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100', '5' : '0101', '6' : '0110', '7' : '0111', 
+                '8' : '1000', '9' : '1001', '10' : '1010', '11' : '1011', '12' : '1100', '13' : '1101', '14' : '1110', '15' : '1111'}
+    
+    # user input will be appended into this list
     answer_list=[]
+
+    # Intro
+    user_name = input(" Weclome! what is your name? ")
+    time.sleep(1)
+    print(f" Okay, {user_name}! I can read your mind with 4 random questions. Please think of any number between 0-15, and write it down somewhere near. ")
+    time.sleep(3)
 
     # let the user think of any number user like from 1-15, ask them to write down somewhere     
     run = start()
@@ -44,14 +52,19 @@ def main():
 
         # find the number from the answer dictionary 
         guess = list(answer_dict.keys())[list (answer_dict.values()).index(''.join(answer_list))]
+        
+        print()
+        print(f" hmmm.. I see what you have in your mind, {user_name} ... ")
         time.sleep(1)
-        print(" hmmm.. I see what you have in your mind")
-        time.sleep(1)
+        print()
         print(" .....")
+        print()
         time.sleep(1)
         print(" You have ... ")
-        time.sleep(1)
+        print()
+        time.sleep(2)
         print ( f" {guess} in your mind. ")
+        print()
         time.sleep(1)
 
         # display the result and ask user to confirm the result, and ask if the user wants to play again
@@ -62,8 +75,7 @@ def main():
 
 # start game 
 def start():
-    print(" I can read your mind with 4 random questions. Please think of any number between 0-15, and write it down somewhere near. ")
-    time.sleep(2)
+
     valid_input = False
 
     while (not valid_input) :
@@ -85,7 +97,9 @@ def start():
 # asking user if the number is in displayed lists, and return the user input 
 def get_answer(list):
 
+    print()
     answer = input(f" Is your number in this list? {list} please, select 1. Yes 2. No : ")
+    
     valid_input = False
     while (not valid_input) :
         if answer == "1" :
@@ -95,7 +109,7 @@ def get_answer(list):
             answer = "0"
             valid_input = True
         else :
-            print(" Please, type valid number.")
+            print()
             answer = input(f" Please, type valid number. Is your number in this list? {list} 1. Yes 2. No : ") 
             valid_input = False
 
@@ -107,7 +121,8 @@ def get_result(guess):
     
     valid_confirm = False
     while(not valid_confirm) :  
-        confirm = input(f" Is {guess} correct number? please, select 1. Yes 2. No : ")  
+        confirm = input(f" Is {guess} correct number? please, select 1. Yes 2. No : ")
+        print()  
         if confirm == "1":
             valid_confirm = True
             print(" Thank you. I see lots of great things coming to your life. Good luck! ")
@@ -126,7 +141,8 @@ def get_result(guess):
                     valid_replay = True
                 else : 
                     valid_replay = False
-                    print(" Please, type valid number. ")                
+                    print(" Please, type valid number. ")
+                    print()                
         else: 
             print(" Please, type valid number. ")
     return run
