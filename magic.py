@@ -15,20 +15,17 @@ answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100
 
 
 # function 
-def read_mind():
+def main():
     answer_list=[]
 
     # let the user think of any number user like from 1-15, ask them to write down somewhere     
     run = start()
 
-
     while run:
 
         answer_list=[]
         
-        """ disply list of numbers A, and ask if the number is in this list    
-         save the answer in the list (yes=1 no=0) """
-        
+        # disply list of numbers A, and ask if the number is in this list and        
         answer = get_answer(list_a)
         answer_list.append(answer)
         time.sleep(1)
@@ -135,7 +132,6 @@ def get_result(guess):
     return run
 
 if __name__ == "__main__":
-    read_mind()
+    main()
 
 
-#TODO int('1111',2)
