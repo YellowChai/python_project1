@@ -1,5 +1,4 @@
 
-
 # lists displayed to user 
 list_a = [8,9,10,11,12,13,14,15]
 list_b = [4,5,6,7,12,13,14,15]
@@ -76,16 +75,11 @@ def get_answer(list):
     elif answer == "2" :
         answer = "0"
     else :
-        print("Please, type valid number.")
+        print(" Please, type valid number.")
         answer = input(" Is your number in this list? please, type number 1. Yes 2. No : ")
     print(answer)
     return answer
 
 read_mind()
 
-# possible errors
-# invalid input 
-# A. number input when needed yes or no - can be solved by 1. provide both options or 2. error message to choose the word yes or no 
-# B. Capital letter input - make all lowercase 
-# C. Y or YES - allow both input
-# D. invalid letters - error message(A can be solved with this)
+
