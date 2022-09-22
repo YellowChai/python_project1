@@ -1,14 +1,16 @@
-import random
 
-# variable: user_input(string), user_answer(list), answer_dict(dictionary number(1-15):answer_list), listA(list), listB(list), listC(list), listD(list)
+
+# lists displayed to user 
 list_a = [8,9,10,11,12,13,14,15]
 list_b = [4,5,6,7,12,13,14,15]
 list_c = [2,3,6,7,10,11,14,15]
 list_d = [1,3,5,7,9,11,13,15]
 
-answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100', '5' : '0101', '6' : '0110', '7' : '0111', '8' : '1000',
-            '9': '1001', '10' : '1010', '11' : '1011', '12' : '1100', '13' : '1101', '14' : '1110', '15' : '1111'}
+# answer dictionary to find the user's number
+answer_dict={'0' : '0000', '1' : '0001', '2' : '0010', '3' : '0011', '4' : '0100', '5' : '0101', '6' : '0110', '7' : '0111', 
+            '8' : '1000', '9' : '1001', '10' : '1010', '11' : '1011', '12' : '1100', '13' : '1101', '14' : '1110', '15' : '1111'}
 
+# function 
 
 def read_mind():
     answer_list=[]
@@ -21,7 +23,7 @@ def read_mind():
     elif start == "2" :
         print(" Plase, visit again! ")
         run = False
-        
+
 # let the user think of any number user like from 1-15, ask them to write down somewhere 
 # disply list of numbers A, and ask if the number is in this list    
 # save the answer in the list (yes=1 no=0)
@@ -65,8 +67,9 @@ def read_mind():
     return 
 
 
+# asking user if the number is in displayed lists, and return the answer
 def get_answer(list):
-    # user_answer=[]
+
     answer = input(f" Is your number in this list? {list} please, type number 1. Yes 2. No : ")
     if answer == "1" :
         answer = "1"
