@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Alice Huh - Read your mind game - Project 1 """
+"""Alice Huh - pyton If logic - Project 1 """
 
+# import time module
 import time
 
 
-# function 
 def main():
 
     # lists displayed to user 
@@ -26,7 +26,7 @@ def main():
     print(f" Okay, {user_name}! I can read your mind with 4 random questions. Please think of any number between 0-15, and write it down somewhere near. ")
     time.sleep(3)
 
-    # let the user think of any number user like from 1-15, ask them to write down somewhere     
+    # start game by calling function start   
     run = start()
 
     while run:
@@ -73,7 +73,7 @@ def main():
     return 
 
 
-# start game 
+# ask user to think of any number from 1-15, ask the user to write it down somewhere   
 def start():
 
     valid_input = False
