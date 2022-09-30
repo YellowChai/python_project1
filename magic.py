@@ -4,6 +4,79 @@
 # import time module
 import time
 
+# ask user to think of any number from 1-15, ask the user to write it down somewhere   
+def start():
+
+    valid_input = False
+
+    while (not valid_input) :
+        start = input(" Do you want to continue?  Please, select 1. Yes 2. No : \n ")
+        if start == "1" :
+            run = True
+            valid_input = True
+        elif start == "2" :
+            print(" See you again! \n")
+            valid_input = True
+            run = False
+        else: 
+            print(" Please, type valid number. \n")
+            valid_input = False
+
+    return run
+
+
+# asking user if the number is in displayed lists, and return the user input 
+def get_answer(list):
+
+    answer = input(f" Is your number in this list? {list} please, select 1. Yes 2. No : \n ")
+    
+    valid_input = False
+    while (not valid_input) :
+        if answer == "1" :
+            answer = "1"
+            valid_input = True
+        elif answer == "2" :
+            answer = "0"
+            valid_input = True
+        else :
+            print()
+            answer = input(f" Please, type valid number. Is your number in this list? {list} 1. Yes 2. No : \n ") 
+            valid_input = False
+
+    return answer
+
+
+# display result - if the guess is incorrect, ask user if he wants to play again. if yes, run the game again, if no, end the loop
+def get_result(guess):
+    
+    valid_confirm = False
+    while(not valid_confirm) :  
+        confirm = input(f" Is {guess} correct number? please, select 1. Yes 2. No : \n ") 
+        if confirm == "1":
+            valid_confirm = True
+            print(" Thank you. I see lots of great things coming to your life. Good luck! \n ")
+            run = False        
+        elif confirm == "2":
+            valid_confirm = True
+            valid_replay = False
+            while(not valid_replay):
+                replay = input(" Hmm.. Are you sure? Please, double check your number! Do you want to try again? please, select 1. Yes 2. No : \n ")
+                if replay == "1":
+                    run = True
+                    valid_replay = True
+                elif replay == "2":
+                    print(" Thank you! See you again! \n ")
+                    run = False
+                    valid_replay = True
+                else : 
+                    valid_replay = False
+                    print(" Please, type valid number. \n ")
+                                    
+        else: 
+            print(" Please, type valid number. \n ")
+    return run
+
+
 
 def main():
 
@@ -21,9 +94,9 @@ def main():
     answer_list=[]
 
     # Intro
-    user_name = input(" Weclome! what is your name? ")
+    user_name = input(" Weclome! what is your name? \n ")
     time.sleep(1)
-    print(f" Okay, {user_name}! I can read your mind with 4 random questions. Please think of any number between 0-15, and write it down somewhere near. ")
+    print(f" Okay, {user_name}! I can read your mind with 4 random questions. Please think of any number between 0-15, and write it down somewhere near. \n")
     time.sleep(3)
 
     # start game by calling function start   
@@ -53,18 +126,18 @@ def main():
         # find the number from the answer dictionary 
         guess = list(answer_dict.keys())[list (answer_dict.values()).index(''.join(answer_list))]
         
-        print()
-        print(f" hmmm.. I see what you have in your mind, {user_name} ... ")
+        
+        print(f" hmmm.. I see what you have in your mind, {user_name} ... \n ")
         time.sleep(1)
-        print()
-        print(" .....")
-        print()
+    
+        print(" ..... \n")
         time.sleep(1)
-        print(" You have ... ")
-        print()
+
+        print(" You have ... \n")
         time.sleep(2)
-        print ( f" {guess} in your mind. ")
-        print()
+
+        print ( f" {guess} in your mind. \n")
+
         time.sleep(1)
 
         # display the result and ask user to confirm the result, and ask if the user wants to play again
@@ -73,79 +146,6 @@ def main():
     return 
 
 
-# ask user to think of any number from 1-15, ask the user to write it down somewhere   
-def start():
-
-    valid_input = False
-
-    while (not valid_input) :
-        start = input(" Do you want to continue?  Please, select 1. Yes 2. No : ")
-        if start == "1" :
-            run = True
-            valid_input = True
-        elif start == "2" :
-            print(" See you again! ")
-            valid_input = True
-            run = False
-        else: 
-            print(" Please, type valid number. ")
-            valid_input = False
-
-    return run
-
-
-# asking user if the number is in displayed lists, and return the user input 
-def get_answer(list):
-
-    print()
-    answer = input(f" Is your number in this list? {list} please, select 1. Yes 2. No : ")
-    
-    valid_input = False
-    while (not valid_input) :
-        if answer == "1" :
-            answer = "1"
-            valid_input = True
-        elif answer == "2" :
-            answer = "0"
-            valid_input = True
-        else :
-            print()
-            answer = input(f" Please, type valid number. Is your number in this list? {list} 1. Yes 2. No : ") 
-            valid_input = False
-
-    return answer
-
-
-# display result - if the guess is incorrect, ask user if he wants to play again. if yes, run the game again, if no, end the loop
-def get_result(guess):
-    
-    valid_confirm = False
-    while(not valid_confirm) :  
-        confirm = input(f" Is {guess} correct number? please, select 1. Yes 2. No : ")
-        print()  
-        if confirm == "1":
-            valid_confirm = True
-            print(" Thank you. I see lots of great things coming to your life. Good luck! ")
-            run = False        
-        elif confirm == "2":
-            valid_confirm = True
-            valid_replay = False
-            while(not valid_replay):
-                replay = input(" Hmm.. Are you sure? Please, double check your number! Do you want to try again? please, select 1. Yes 2. No : ")
-                if replay == "1":
-                    run = True
-                    valid_replay = True
-                elif replay == "2":
-                    print(" Thank you! See you again! ")
-                    run = False
-                    valid_replay = True
-                else : 
-                    valid_replay = False
-                    print(" Please, type valid number. ")
-                    print()                
-        else: 
-            print(" Please, type valid number. ")
-    return run
 
 if __name__ == "__main__":
     main()
